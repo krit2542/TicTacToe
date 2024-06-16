@@ -77,18 +77,14 @@ AI จะสุ่มเลือกช่องว่างในบอร์�
 
 function checkWin() {
     for (let i = 0; i < boardSize; i++) {
-        // Check rows and columns
-        if (board[i].every(cell => cell === currentPlayer) || board.every(row => row[i] === currentPlayer)) {
+    if (board[i].every(cell => cell === currentPlayer) || board.every(row => row[i] === currentPlayer)) {
             return true;
         }
     }
-
-    // Check diagonals
     if (board.every((row, index) => row[index] === currentPlayer) || 
         board.every((row, index) => row[boardSize - index - 1] === currentPlayer)) {
         return true;
     }
-
     return false;
 }
 
@@ -96,17 +92,17 @@ function checkWin() {
 
 function startReplay(moves) {
 
-    document.getElementById('history').classList.add('hidden');
+document.getElementById('history').classList.add('hidden');
 
-    document.getElementById('replay').classList.remove('hidden');
+document.getElementById('replay').classList.remove('hidden');
 
-    const boardSize = Math.sqrt(moves.length);
+const boardSize = Math.sqrt(moves.length);
 
-    createBoard(boardSize);
+createBoard(boardSize);
 
-    let index = 0;
+let index = 0;
 
-    const interval = setInterval(() => {
+const interval = setInterval(() => {
         if (index >= moves.length) {
             clearInterval(interval);
             return;
@@ -115,7 +111,7 @@ function startReplay(moves) {
         board[row][col] = player;
         renderBoard(boardSize);
         index++;
-    }, 1000); // Adjust the delay as needed
+    }, 1000); 
 }
 
 ## สรุป
