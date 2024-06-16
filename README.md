@@ -33,6 +33,11 @@ Create database name "TicTacToe" then import file "history.sql"
 
 Replay function has been add as a last function so it's only work with few of last record and 3x3 board. You can play a new game to check it out.
 
+## PS2
+
+To wacth replay click on that record
+
+
 
 ## Run localhost
 
