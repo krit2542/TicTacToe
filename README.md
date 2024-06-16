@@ -75,7 +75,8 @@ AI จะสุ่มเลือกช่องว่างในบอร์�
 
 ## Win condition check
 
-function checkWin() {
+
+    function checkWin() {
     for (let i = 0; i < boardSize; i++) {
     if (board[i].every(cell => cell === currentPlayer) || board.every(row => row[i] === currentPlayer)) {
             return true;
@@ -86,33 +87,28 @@ function checkWin() {
         return true;
     }
     return false;
-}
+    }
 
 ## Replay 
 
-function startReplay(moves) {
 
-document.getElementById('history').classList.add('hidden');
-
-document.getElementById('replay').classList.remove('hidden');
-
-const boardSize = Math.sqrt(moves.length);
-
-createBoard(boardSize);
-
-let index = 0;
-
-const interval = setInterval(() => {
-        if (index >= moves.length) {
-            clearInterval(interval);
-            return;
-        }
-        const { player, row, col } = moves[index];
-        board[row][col] = player;
-        renderBoard(boardSize);
-        index++;
-    }, 1000); 
-}
+    function startReplay(moves) {
+    document.getElementById('history').classList.add('hidden');
+    document.getElementById('replay').classList.remove('hidden');
+    const boardSize = Math.sqrt(moves.length);
+    createBoard(boardSize);
+    let index = 0;
+    const interval = setInterval(() => {
+          if (index >= moves.length) {
+              clearInterval(interval);
+              return;
+              }
+          const { player, row, col } = moves[index];
+          board[row][col] = player;
+          renderBoard(boardSize);
+          index++;
+      }, 1000);
+      }
 
 ## สรุป
 
