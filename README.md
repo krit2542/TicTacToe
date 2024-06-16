@@ -31,7 +31,7 @@ Create database name "TicTacToe" then import file "history.sql"
 
 ## PS
 
-Replay function has been add as a last function so it's only work with few of last record. You can play a new game to check it out.
+Replay function has been add as a last function so it's only work with few of last record and 3x3 board. You can play a new game to check it out.
 
 
 ## Run localhost
