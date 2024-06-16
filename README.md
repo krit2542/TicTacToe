@@ -1,6 +1,15 @@
 # TicTacToe
 fullStackTest--Tic tac toe Game on web.
 
+## Start
+
+Download ZIP
+Extract file
+
+In VS Code click open folder -- open file that you extracted
+
+then following all setup guid below
+
 ## Installation
 
 Install my-project with npm
