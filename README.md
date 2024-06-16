@@ -1,5 +1,24 @@
 # TicTacToe
 fullStackTest--Tic tac toe Game on web.
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm init -y
+  npm install express mysql
+```
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+
 ## Database
 
 Xampp -- phpmyadmin
