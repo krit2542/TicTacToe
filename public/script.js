@@ -131,83 +131,14 @@ function increaseBoardSize() {
     createBoard();
 }
 
-// let moves = []; // Add this to store moves
 
-// function handleMove(i, j) {
-//     if (board[i][j] !== '' || (gameMode === 'AI' && currentPlayer === 'O')) return;
-//     board[i][j] = currentPlayer;
-//     moves.push({ player: currentPlayer, row: i, col: j }); // Store move
-//     renderBoard();
-//     if (checkWin()) {
-//         setTimeout(() => {
-//             alert(`${currentPlayer} wins!`);
-//             addResultToHistory(`${currentPlayer} wins`, moves);
-//             resetGame();
-//         }, 100); // Short delay to allow the last move to be rendered
-//     } else if (board.flat().every(cell => cell !== '')) {
-//         setTimeout(() => {
-//             alert('Draw!');
-//             addResultToHistory('Draw', moves);
-//             resetGame();
-//         }, 100); // Short delay to allow the last move to be rendered
-//     } else {
-//         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-//         if (gameMode === 'AI' && currentPlayer === 'O') {
-//             setTimeout(handleAIMove, 500); // Delay AI move to simulate thinking time
-//         }
-//     }
-// }
-
-// function handleAIMove() {
-//     let availableMoves = [];
-//     board.forEach((row, i) => {
-//         row.forEach((cell, j) => {
-//             if (cell === '') availableMoves.push({ i, j });
-//         });
-//     });
-//     const move = availableMoves[Math.floor(Math.random() * availableMoves.length)];
-//     board[move.i][move.j] = 'O';
-//     moves.push({ player: 'O', row: move.i, col: move.j }); // Store move
-//     renderBoard();
-//     if (checkWin()) {
-//         setTimeout(() => {
-//             alert('O wins!');
-//             addResultToHistory('O wins', moves);
-//             resetGame();
-//         }, 100); // Short delay to allow the last move to be rendered
-//     } else if (board.flat().every(cell => cell !== '')) {
-//         setTimeout(() => {
-//             alert('Draw!');
-//             addResultToHistory('Draw', moves);
-//             resetGame();
-//         }, 100); // Short delay to allow the last move to be rendered
-//     } else {
-//         currentPlayer = 'X';
-//     }
-// }
-
-// function addResultToHistory(result, moves) {
-//     fetch('/api/addResult', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ result, moves })
-//     });
-// }
-
-// function resetGame() {
-//     currentPlayer = 'X';
-//     moves = []; // Reset moves
-//     createBoard();
-// }
 
 let moves = []; 
 
 function handleMove(i, j) {
     if (board[i][j] !== '' || (gameMode === 'AI' && currentPlayer === 'O')) return;
     board[i][j] = currentPlayer;
-    moves.push({ player: currentPlayer, row: i, col: j }); // Store move
+    moves.push({ player: currentPlayer, row: i, col: j }); 
     renderBoard();
     if (checkWin()) {
         setTimeout(() => {
@@ -224,7 +155,7 @@ function handleMove(i, j) {
     } else {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         if (gameMode === 'AI' && currentPlayer === 'O') {
-            setTimeout(handleAIMove, 500); // Delay AI move to simulate thinking time
+            setTimeout(handleAIMove, 500); 
         }
     }
 }
@@ -238,7 +169,7 @@ function handleAIMove() {
     });
     const move = availableMoves[Math.floor(Math.random() * availableMoves.length)];
     board[move.i][move.j] = 'O';
-    moves.push({ player: 'O', row: move.i, col: move.j }); // Store move
+    moves.push({ player: 'O', row: move.i, col: move.j }); 
     renderBoard();
     if (checkWin()) {
         setTimeout(() => {
@@ -269,6 +200,6 @@ function addResultToHistory(result, moves) {
 
 function resetGame() {
     currentPlayer = 'X';
-    moves = []; // Reset moves
+    moves = []; 
     createBoard();
 }
